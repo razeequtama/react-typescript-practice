@@ -40,3 +40,6 @@ const handleIncrement = (): void => {
 ```
 
 Goal: Understand what React state actually is.
+
+# What I Learned
+- When you call a React state setter, React updates the state after the current function finishes.
