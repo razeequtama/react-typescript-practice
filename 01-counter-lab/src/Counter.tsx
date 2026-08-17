@@ -14,6 +14,7 @@ export default function Counter()
 
         setCount(newCount);
         detectMax(newCount);
+        addToHistory(newCount);
     }
 
     function subtract(step: number): void {
@@ -21,6 +22,7 @@ export default function Counter()
 
         setCount(newCount);
         detectMin(newCount);
+        addToHistory(newCount);
     }
 
     function detectMax(newCount: number)
@@ -31,6 +33,11 @@ export default function Counter()
     function detectMin(newCount: number)
     {
         if(newCount < minValue) setMin(newCount)
+    }
+
+    function addToHistory(newNumber: number): void 
+    {
+        setHistory((remainingNumbers) => [...remainingNumbers, newNumber])
     }
 
     return(
@@ -50,6 +57,12 @@ export default function Counter()
 
             <h3>Max Value: {maxValue}</h3>
             <h3>Min Value: {minValue}</h3>
+
+            <p>History: 0 {history.length === 0 ? null : history.map((number, index) => {
+                    return(
+                        <span key={index}>- {number} </span>
+                    )
+                })}</p>
         </>
     )
 }
