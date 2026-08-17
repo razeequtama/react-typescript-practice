@@ -8,43 +8,21 @@ export default function Counter()
     let [minValue, setMin] = useState(count);
     let [history, setHistory] = useState<number[]>([]);
 
-
-    function add(step: number): void {
+    function changeCount(step: number): void {
         const newCount = count + step;
 
         setCount(newCount);
-        detectMax(newCount);
-        addToHistory(newCount);
-    }
+        if(maxValue < newCount) setMax(newCount);
+        if(minValue > newCount) setMin(newCount);
 
-    function subtract(step: number): void {
-        const newCount = count - step;
-
-        setCount(newCount);
-        detectMin(newCount);
-        addToHistory(newCount);
-    }
-
-    function detectMax(newCount: number)
-    {
-        if(newCount > maxValue) setMax(newCount)
-    }
-
-    function detectMin(newCount: number)
-    {
-        if(newCount < minValue) setMin(newCount)
-    }
-
-    function addToHistory(newNumber: number): void 
-    {
-        setHistory((remainingNumbers) => [...remainingNumbers, newNumber])
+        setHistory((remainingNumbers) => [...remainingNumbers, newCount]);
     }
 
     return(
         <>
             <h2>Counter: {count}</h2>
-            <button onClick={() => add(step)}>+</button>
-            <button onClick={() => subtract(step)}>-</button>
+            <button onClick={() => changeCount(step)}>+</button>
+            <button onClick={() => changeCount(-step)}>-</button>
 
             <br />
 
@@ -60,7 +38,7 @@ export default function Counter()
 
             <p>History: 0 {history.length === 0 ? null : history.map((number, index) => {
                     return(
-                        <span key={index}>- {number} </span>
+                        <span key={index}>-&gt; [{number}] </span>
                     )
                 })}</p>
         </>
