@@ -9,8 +9,8 @@ The goal is to learn by building increasingly realistic applications, starting w
 
 # Progress
 
-* [ ] 01 — Counter Lab
-* [ ] 02 — Dynamic Form
+* [X] 01 — Counter Lab
+* [X] 02 — Dynamic Form
 * [ ] 03 — Task Board
 * [ ] 04 — Quiz Engine
 * [ ] 05 — Expense Analyzer

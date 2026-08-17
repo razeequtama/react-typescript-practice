@@ -41,9 +41,6 @@ const handleIncrement = (): void => {
 
 Goal: Understand what React state actually is.
 
-# What I Learned
-- When you call a React state setter, React updates the state after the current function finishes.
-
 # Versions:
 ## Version 1:
 ```tsx
@@ -172,3 +169,6 @@ export default function Counter()
 - Adding, subtracting, setting max, setting min, and adding history is now put into a single function.
 # Result
 ![alt text](docs/demo_gif.gif)
+
+# What I Learned
+- When you call a React state setter, React updates the state after the current function finishes.
