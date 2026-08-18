@@ -15,8 +15,7 @@ export default function TaskCard({ task, onDelete }: TaskCardType) {
         <div key={task.id}>
             {/* <p>id: {task.id}</p> */}
             <h2>{task.title}</h2>
-            <h3>Priority: {task.priority}</h3>
-            <p>Status: {task.status}</p>
+            <p>Priority: {task.priority}</p>
 
             <button onClick={() => onDelete(task.id)}>
                 Delete

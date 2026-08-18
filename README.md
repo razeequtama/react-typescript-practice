@@ -11,7 +11,7 @@ The goal is to learn by building increasingly realistic applications, starting w
 
 * [X] 01 — Counter Lab
 * [X] 02 — Dynamic Form
-* [ ] 03 — Task Board
+* [X] 03 — Task Board
 * [ ] 04 — Quiz Engine
 * [ ] 05 — Expense Analyzer
 * [ ] 06 — Habit Tracker v2
