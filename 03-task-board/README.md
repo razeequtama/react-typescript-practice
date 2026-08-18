@@ -1,4 +1,4 @@
-# 3. Task Board
+# Task Board
 
 Not a generic Todo app.
 
@@ -22,7 +22,7 @@ type Task = {
 };
 ```
 
-### Learn
+## Learn
 
 React:
 
