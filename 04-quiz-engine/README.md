@@ -47,7 +47,7 @@ if (question.type === "multiple-choice") {
 No version is being finished yet.
 
 # What I Learned
-Project hasn't started.
+- Type narrowing is an option (you can do it with an if statement) if necessary while dealing with union types.
 
 # Result
 No result is being recorded yet.
