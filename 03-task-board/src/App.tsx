@@ -1,7 +1,13 @@
+import TaskBoard from "./components/TaskBoard"
+
 function App() {
   
 
-  return (<h1>Hello</h1>)
+  return (
+    <>
+      <TaskBoard />
+    </>
+  )
 }
 
 export default App

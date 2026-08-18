@@ -44,3 +44,17 @@ type TaskCardProps = {
 That function typing is **important**.
 
 **Goal:** Become comfortable passing typed data and functions between components.
+
+# Versions
+## Version 1
+TaskCard.tsx
+```tsx
+// TaskCard.tsx CODE HERE
+```
+TaskBoard.tsx
+```tsx
+// TaskBoard.tsx CODE HERE
+```
+
+# What I Learned
+- .map() determines what gets passed into your callback based on the type/shape of the array you're mapping over.
