@@ -12,9 +12,9 @@ export type TaskCardType = {
 
 export default function TaskCard({ task, onDelete }: TaskCardType) {
     return (
-        <div>
-            <p>id: {task.id}</p>
-            <h1>{task.title}</h1>
+        <div key={task.id}>
+            {/* <p>id: {task.id}</p> */}
+            <h2>{task.title}</h2>
             <h3>Priority: {task.priority}</h3>
             <p>Status: {task.status}</p>
 

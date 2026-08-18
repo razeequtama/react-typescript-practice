@@ -53,7 +53,22 @@ export default function TaskBoard()
 
     return(
         <>
-            {userTasks.map(createTask)}
+            <h1>Backlog</h1>
+            {userTasks
+                .filter(task => task.status === "backlog")
+                .map(createTask)
+            }
+            
+            <h1>Progress</h1>
+            {userTasks
+                .filter(task => task.status === "progress")
+                .map(createTask)
+            }
+            <h1>Done</h1>
+            {userTasks
+                .filter(task => task.status === "done")
+                .map(createTask)
+            }
         </>
     )
 }
