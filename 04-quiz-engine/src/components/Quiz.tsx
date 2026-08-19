@@ -37,10 +37,14 @@ import { questions } from "../data/questions";
 export default function Quiz()
 {
 
-    let [userAnswer, setUserAnswer] = useState<Record<number, string | string[]>>({})
+    let [userAnswer, setUserAnswer] = useState<Record<number, string | string[] | boolean>>({})
 
     useEffect(() => {
-        console.log(userAnswer);
+        console.log("--------------------");
+        for (let i = 0; i < questions.length; i++) {
+            console.log(JSON.stringify(userAnswer[i + 1]) == JSON.stringify(questions[i].answer));
+        }
+
     }, [userAnswer]);
 
 
@@ -71,7 +75,11 @@ export default function Quiz()
             }
             else
             {
-                ansArrayFinal[qId] = answer[0].getAttribute("value");
+                let individualAnswer = answer[0].getAttribute("value");
+                if (individualAnswer === "true" || individualAnswer === "false") {
+                    individualAnswer = (individualAnswer === "true");
+                }
+                ansArrayFinal[qId] = individualAnswer;
             }
             setUserAnswer(ansArrayFinal);
         })
@@ -86,6 +94,7 @@ export default function Quiz()
             return(
                 <div data-question-id={question.id} key={question.id}>
                     <h2>{question.id}. {question.question}</h2>
+                    <p data-result-id={question.id} style={{display: "none"}}></p>
                     {question.options.map(option => {
                         return (
                             <label>
@@ -110,6 +119,7 @@ export default function Quiz()
             return(
                 <div data-question-id={question.id} key={question.id}>
                     <h2>{question.id}. {question.question}</h2>
+                    <p data-result-id={question.id} style={{display: "none"}}></p>
                     <label>
                         <input
                             name={`q${question.id}`}
@@ -143,6 +153,7 @@ export default function Quiz()
             return(
                 <div data-question-id={question.id} key={question.id}>
                     <h2>{question.id}. {question.question}</h2>
+                    <p data-result-id={question.id} style={{display: "none"}}></p>
                     {question.options.map(option => {
                         return <label>
                                     <input
