@@ -38,14 +38,45 @@ export default function Quiz()
 {
 
     let [userAnswer, setUserAnswer] = useState<Record<number, string | string[] | boolean>>({})
+    let [answerStatus, setAnswerStatus] = useState<boolean[]>([]);
+
 
     useEffect(() => {
-        console.log("--------------------");
-        for (let i = 0; i < questions.length; i++) {
-            console.log(JSON.stringify(userAnswer[i + 1]) == JSON.stringify(questions[i].answer));
+        const statuses = questions.map((question, i) =>
+            JSON.stringify(userAnswer[i + 1]) ===
+            JSON.stringify(question.answer)
+        );
+
+        setAnswerStatus(statuses);
+    }, [userAnswer, questions]);
+
+    useEffect(() => {
+        revealResult();
+    }, [answerStatus]);
+
+    function revealResult()
+    {
+        if (Object.keys(userAnswer).length === 0) {
+            return;
         }
 
-    }, [userAnswer]);
+        let questionResults = document.querySelectorAll("[data-question-id]");
+
+        questionResults.forEach(question => 
+        {
+            const id = question.getAttribute("data-question-id");
+
+            let result = question.querySelector('[data-result-id]');
+            if(!result) return;
+
+            // console.log(answerStatus[Number(id) - 1] + " " + result.getAttribute("data-result-id"));
+
+            answerStatus[Number(id) - 1] === true ? result.textContent = "Correct ✅" : result.textContent = "Wrong ❌";
+
+            result.setAttribute('style', 'display: block;');
+
+        })
+    }
 
 
     function setAnswers(event: any)
@@ -94,7 +125,7 @@ export default function Quiz()
             return(
                 <div data-question-id={question.id} key={question.id}>
                     <h2>{question.id}. {question.question}</h2>
-                    <p data-result-id={question.id} style={{display: "none"}}></p>
+                    <p data-result-id={question.id} style={{display: "none"}}>Correct/Wrong</p>
                     {question.options.map(option => {
                         return (
                             <label>
@@ -119,7 +150,7 @@ export default function Quiz()
             return(
                 <div data-question-id={question.id} key={question.id}>
                     <h2>{question.id}. {question.question}</h2>
-                    <p data-result-id={question.id} style={{display: "none"}}></p>
+                    <p data-result-id={question.id} style={{display: "none"}}>Correct/Wrong</p>
                     <label>
                         <input
                             name={`q${question.id}`}
@@ -153,7 +184,7 @@ export default function Quiz()
             return(
                 <div data-question-id={question.id} key={question.id}>
                     <h2>{question.id}. {question.question}</h2>
-                    <p data-result-id={question.id} style={{display: "none"}}></p>
+                    <p data-result-id={question.id} style={{display: "none"}}>Correct/Wrong</p>
                     {question.options.map(option => {
                         return <label>
                                     <input
@@ -176,6 +207,7 @@ export default function Quiz()
 
     return(
         <>  
+            <h3 id="overall-result-id"></h3>
             <form onSubmit={setAnswers}>
                 {questions.map(question => {
                     return question.type === "multiple-choice" ? renderMultipleQuestions(question) : (question.type === "one-answer" ? renderOneAnserQuestions(question) : renderTrueFalseQuestions(question));
