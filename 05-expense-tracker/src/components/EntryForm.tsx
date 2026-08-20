@@ -1,10 +1,35 @@
-import { useMemo } from "react";
+import { useEffect, useMemo } from "react";
 import { useExpense } from "../context/ExpenseContext";
 import type { ExpenseEntryType } from "../context/ExpenseContext";
 
 export default function EntryForm()
 {
-    const {expense, setExpense, expenseEntryList, setExpenseEntryList} = useExpense();
+    const {setExpense, expenseEntryList, setExpenseEntryList} = useExpense();
+
+    // ===useMemo WILL ONLY RE-RENDER OR "CHANGE" OR EVEN "BREATHE" WHENEVER THE VALUE AT THE DEPENDENCY ARRAY CHANGES===
+    const totalExpense = useMemo(() => {
+        let accumulation = expenseEntryList.filter(entry => entry.type == "Expense").map(entry => entry.amount).reduce((total, amount) => {
+            return total + amount
+        }, 0)
+
+        return accumulation;
+    }, [expenseEntryList])
+
+    const totalIncome = useMemo(() => {
+        let accumulation = expenseEntryList.filter(entry => entry.type == "Income").map(entry => entry.amount).reduce((total, amount) => {
+            return total + amount
+        }, 0)
+
+        return accumulation;
+    }, [expenseEntryList])
+
+    const totalSaving = useMemo(() => {
+        return totalIncome - totalExpense
+    }, [totalIncome, totalExpense])
+
+    useEffect(() => {
+        setExpense(totalSaving);
+    }, [totalSaving])
 
     function handleSubmission(event: React.FormEvent<HTMLFormElement>)
     {
@@ -52,7 +77,6 @@ export default function EntryForm()
         setExpenseEntryList(prev => {
             return [...prev, newEntry];
         });
-        setExpense(expense - 100000);
     }
 
     return(

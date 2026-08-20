@@ -4,5 +4,5 @@ export default function Expense()
 {
     const {expense} = useExpense();
 
-    return <h1>{expense}</h1>
+    return <h1>Saving: {expense}</h1>
 }

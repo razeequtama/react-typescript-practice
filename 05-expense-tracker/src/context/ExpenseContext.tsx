@@ -31,7 +31,7 @@ export function useExpense()
 
 export default function ExpenseContextProvider({children}: {children: ReactNode})
 {
-    const [expense, setExpense] = useState(1000000);
+    const [expense, setExpense] = useState(0);
     const [expenseEntryList, setExpenseEntryList] = useState<ExpenseEntryType[]>([]);
 
     return(
