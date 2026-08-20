@@ -1,6 +1,12 @@
+import ExpenseContextProvider from "./context/ExpenseContext"
+import Expense from "./components/Expense"
+import Tracker from "./components/Tracker"
+
 export default function App()
 {
-  return (
-    <h1>Hello</h1>
+  return(
+    <ExpenseContextProvider>
+      <Tracker />
+    </ExpenseContextProvider>
   )
 }
