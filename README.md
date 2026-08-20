@@ -13,7 +13,7 @@ The goal is to learn by building increasingly realistic applications, starting w
 * [X] 02 — Dynamic Form
 * [X] 03 — Task Board
 * [X] 04 — Quiz Engine
-* [ ] 05 — Expense Analyzer
+* [X] 05 — Expense Analyzer
 * [ ] 06 — Habit Tracker v2
 * [ ] 07 — Movie Search
 * [ ] 08 — Shopping Cart
