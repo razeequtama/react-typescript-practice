@@ -1,12 +1,15 @@
 import ExpenseContextProvider from "./context/ExpenseContext"
 import Expense from "./components/Expense"
-import Tracker from "./components/Tracker"
+import ExpenseEntryList from "./components/ExpenseEntryList"
+import EntryForm from "./components/EntryForm"
 
 export default function App()
 {
   return(
     <ExpenseContextProvider>
-      <Tracker />
+      <Expense />
+      <EntryForm />
+      <ExpenseEntryList />
     </ExpenseContextProvider>
   )
 }
