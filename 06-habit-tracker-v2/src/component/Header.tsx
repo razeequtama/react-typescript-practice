@@ -10,9 +10,9 @@ type CurrentDayType = {
 }
 
 
-export default function Test()
+export default function Header()
 {
-    const {date} = useDateContext();
+    const {date, dateTrack, setDateTrack} = useDateContext();
 
     const currentInformation = useMemo(() => {
         const currentInfo: CurrentDayType = {
@@ -36,10 +36,30 @@ export default function Test()
 
     }, [])
 
+    function moveToPreviousWeek()
+    {
+        setDateTrack(() => {
+            const prevWeek = new Date(dateTrack);
+            prevWeek.setDate(prevWeek.getDate() - 7);
+            return prevWeek
+        })
+    }
+
+    function moveToNextWeek()
+    {
+        setDateTrack(() => {
+            const nextWeek = new Date(dateTrack);
+            nextWeek.setDate(nextWeek.getDate() + 7);
+            return nextWeek
+        })
+    }
+
     return(
         <div>
             <h1>Today</h1>
             <p>{currentInformation.day}, {currentInformation.currDate} {currentInformation.month} {currentInformation.year}</p>
+            <button onClick={moveToPreviousWeek}>Prev</button>
+            <button onClick={moveToNextWeek}>Next</button>
         </div>
     )
 }

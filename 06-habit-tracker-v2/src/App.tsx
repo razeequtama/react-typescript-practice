@@ -1,14 +1,17 @@
 import { DateContextProvider } from "./context/DateContext";
-import Test from "./component/Header";
-import HabitList from "./component/HabitList";
+import { HabitContextProvider } from "./context/HabitContext";
+import Header from "./component/Header";
+import HabitEntryListSet from "./component/HabitEntryListSet";
 import "./App.css"
 
 export default function App()
 {
   return(
+    <HabitContextProvider>
     <DateContextProvider>
-      <Test/>
-      <HabitList />
+      <Header />
+      <HabitEntryListSet/>
     </DateContextProvider>
+    </HabitContextProvider>
   )
 }

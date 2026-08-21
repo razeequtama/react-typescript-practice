@@ -1,9 +1,10 @@
-type HabitEntryType = {
-    day: string,
-    date: number
+export type HabitEntryType = {
+    day: string
+    date: string
+    isDone: boolean
 }
 
-export default function HabitEntry({day, date}: HabitEntryType)
+export default function HabitEntry({day, date, isDone}: HabitEntryType)
 {
-    return <button>{day} {date}</button>    
+    return <button className="habit">{day} {date} {isDone ? "True" : "False"}</button>    
 }

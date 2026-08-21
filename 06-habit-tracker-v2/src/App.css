@@ -18,3 +18,7 @@
 .habit-list{
     max-width: 700px;
 }
+
+.selected{
+    background-color: rgb(186, 187, 137);
+}
