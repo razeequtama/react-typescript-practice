@@ -1,0 +1,20 @@
+.week-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.week-header h2 {
+    margin: 0;
+}
+
+.week-days {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.habit-list{
+    max-width: 700px;
+}

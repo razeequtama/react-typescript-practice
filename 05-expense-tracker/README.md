@@ -34,7 +34,7 @@ Learn:
 
 But here's the rule:
 
-**Don't use `useMemo` just because you know it exists.**
+**Don't use `useMemo` just because I know it exists.**
 
 First make it work normally.
 

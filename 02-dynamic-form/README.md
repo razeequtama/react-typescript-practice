@@ -11,7 +11,7 @@ Build a registration/profile form.
 Add validation.
 
 The interesting part:
-Your form should be represented by an object.
+my form should be represented by an object.
 
 ```tsx
 type UserForm = {
@@ -233,7 +233,7 @@ export default function Form()
 - I really have to be wise to when to use useState or to just deeclare a normal variable. Most times, if something will depend on the variable, I will use useState.
 - I should be cautious whether what I'm writing is inside JavaScript brackets "{}" or not.
 - Use "as" if there is already an object property that is specifically designed to use a specific type.
-- useState can be really useful when you know it can be paired with an input's onChange property
+- useState can be really useful when I know it can be paired with an input's onChange property
 - I realized that React props can directly take boolean expressions. For example: required={skillsSet.length > 1} will result in either required=true or required=false
 
 # Result

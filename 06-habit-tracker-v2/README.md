@@ -1,6 +1,6 @@
-# 6. Habit Tracker v2
+# Habit Tracker v2
 
-Now rebuild the project you just made.
+Now rebuild the project I just made.
 
 **From scratch.**
 
@@ -51,10 +51,20 @@ as a custom hook.
 
 ### The important part
 
-Compare this project with your original.
+Compare this project with my original.
 
-You should feel:
+I should feel:
 
 > "Oh. I understand why I struggled before."
 
 That's progress.
+
+# Versions
+There are no current finished versions.
+
+# What I've Learned
+- setDate() is incredibly useful to use if I wanna make sure that changing dates is done properly (knowing some months ends with date of 31, 30, 28, and 29).
+
+# Result
+There are no current recorded results.
+

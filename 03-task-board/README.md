@@ -280,7 +280,7 @@ export const useUserTasks = () => {
 
 
 # What I Learned
-- .map() determines what gets passed into your callback based on the type/shape of the array you're mapping over.
+- .map() determines what gets passed into my callback based on the type/shape of the array I'm mapping over.
 - I can do arrayVariable.filter().map() to filter specific parts of the array I want to map
 - If I wanna import and export a useState and it's setter, wrap it as a function,
 

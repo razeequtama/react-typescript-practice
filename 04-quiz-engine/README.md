@@ -421,7 +421,7 @@ export default function Quiz()
 ```
 
 # What I Learned
-- Type narrowing is an option (you can do it with an if statement) if necessary while dealing with union types.
+- Type narrowing is an option (I can do it with an if statement) if necessary while dealing with union types.
 - JavaScript has two broad categories:
 Primitives (string, number, boolean, null, undefined, bigint, symbol), they are compared by	Value. And
 Objects (including Array, Object, Date, Map, Set, functions, etc.), are compared by Reference.

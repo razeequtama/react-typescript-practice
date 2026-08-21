@@ -171,4 +171,4 @@ export default function Counter()
 ![alt text](docs/demo_gif.gif)
 
 # What I Learned
-- When you call a React state setter, React updates the state after the current function finishes.
+- When I call a React state setter, React updates the state after the current function finishes.
