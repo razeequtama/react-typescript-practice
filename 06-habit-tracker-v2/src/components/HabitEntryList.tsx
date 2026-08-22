@@ -123,7 +123,7 @@ export default function HabitEntryList({id, habitName, habitEntryList}: HabitEnt
                     if(habitEntryList?.length === 0)
                     {
                         return <HabitEntry
-                                    key={id}
+                                    key={i}
                                     date={getWeekStartDateString(i)}
                                     isDone={false}
                                     day={day}
@@ -133,7 +133,7 @@ export default function HabitEntryList({id, habitName, habitEntryList}: HabitEnt
                     else
                     {
                         return <HabitEntry
-                                    key={id}
+                                    key={i}
                                     date={getWeekStartDateString(i)}
                                     isDone={specificHabitEntryListSelection?.isDone ? specificHabitEntryListSelection?.isDone : false}
                                     day={day} 

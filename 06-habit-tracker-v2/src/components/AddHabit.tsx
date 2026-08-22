@@ -21,7 +21,10 @@ export default function AddHabit()
 
         newHabitEntryList.habitName = newHabitName;
 
-        const newId = (Math.max(...habitEntryListSet.map(entry => entry.id)) + 1);
+        let newId;
+
+        if(habitEntryListSet.length === 0) newId = 0;
+        else newId = (Math.max(...habitEntryListSet.map(entry => entry.id)) + 1);
 
         newHabitEntryList.id = newId
 
