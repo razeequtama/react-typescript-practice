@@ -2,7 +2,9 @@ import { createContext, useCallback, useContext, useState, type Dispatch, type R
 
 type DateContextType = {
     date: Date,
-    setDate: Dispatch<SetStateAction<Date>>
+    setDate: Dispatch<SetStateAction<Date>>,
+    dateTrack: Date,
+    setDateTrack: Dispatch<SetStateAction<Date>>
 }
 
 export const DateContext = createContext<DateContextType | null>(null);
@@ -17,9 +19,10 @@ export function useDateContext()
 export function DateContextProvider({children}: {children: ReactNode})
 {
     const [date, setDate] = useState<Date>(new Date());
+    const [dateTrack, setDateTrack] = useState<Date>(new Date());
 
     return(
-        <DateContext.Provider value={{date, setDate}}>
+        <DateContext.Provider value={{date, setDate, dateTrack, setDateTrack}}>
             {children}
         </DateContext.Provider>
     )

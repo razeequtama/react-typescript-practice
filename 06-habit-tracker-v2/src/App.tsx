@@ -1,6 +1,7 @@
 import { HabitEntryListSetContextProvider } from "./context/HabitEntryListSetContext"
 import { DateContextProvider } from "./context/DateContext"
 import Header from "./components/Header"
+import HabitEntryListSet from "./components/HabitEntryListSet"
 import "./App.css"
 
 export default function App()
@@ -10,6 +11,7 @@ export default function App()
       <DateContextProvider>
       <HabitEntryListSetContextProvider>
         <Header/>
+        <HabitEntryListSet />
       </HabitEntryListSetContextProvider>
       </DateContextProvider>
     </div>
@@ -68,7 +70,7 @@ export default function App()
   --------------------------------
   ================================
 
-  Example habitEntryListSet::
+  Example habitEntryListSet:
   {
     id: 1,
     habitName: "Drink Water",
