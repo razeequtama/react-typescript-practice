@@ -89,12 +89,28 @@ export default function HabitEntryList({id, habitName, habitEntryList}: HabitEnt
         );
     }
 
+    function deleteList()
+    {
+        setHabitEntryListSet(prev => {
+            const newList = prev.filter(entry => entry.id !== id)
+            return newList
+        })
+    }
+
     return(
         <div className="flex flex-col gap-4">
             {/* {habitEntryList.map(habitEntry => {
                 return <HabitEntry date={habitEntry.date.split("/")[1]} isDone={habitEntry.isDone} />
             })} */}
-            <h1 className="font-bold text-2xl">{habitName}</h1>
+            <div className="flex justify-between">
+                <h1 className="font-bold text-2xl">{habitName}</h1>
+                <button className="outline-orange-700 outline-2 rounded-2xl px-3 py-2 text-orange-700
+                                    hover:bg-orange-700 hover:text-amber-50 transition-all cursor-pointer"
+                        onClick={deleteList}
+                >
+                                        Delete
+                </button>
+            </div>
             
             <div className="flex gap-4">
                 {days.map((day, i) => {

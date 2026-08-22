@@ -2,6 +2,7 @@ import { HabitEntryListSetContextProvider } from "./context/HabitEntryListSetCon
 import { DateContextProvider } from "./context/DateContext"
 import Header from "./components/Header"
 import HabitEntryListSet from "./components/HabitEntryListSet"
+import AddHabit from "./components/AddHabit"
 import "./App.css"
 
 export default function App()
@@ -11,6 +12,7 @@ export default function App()
       <DateContextProvider>
       <HabitEntryListSetContextProvider>
         <Header/>
+        <AddHabit />
         <HabitEntryListSet />
       </HabitEntryListSetContextProvider>
       </DateContextProvider>

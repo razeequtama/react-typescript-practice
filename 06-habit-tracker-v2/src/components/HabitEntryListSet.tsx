@@ -28,7 +28,7 @@ export default function HabitEntryListSet()
                 <h3>{months[getStartOfWeek().getMonth()]} {getStartOfWeek().getFullYear()}</h3>
                 <h3>{months[getEndOfWeek().getMonth()]} {getEndOfWeek().getFullYear()}</h3>
             </div>
-            <div className="px-4 py-2">
+            <div className="px-4 py-2 flex flex-col gap-4">
                 {habitEntryListSet.length === 0 ?
                     <p>There are currently no habits! Add one to get started!</p>
                     :
