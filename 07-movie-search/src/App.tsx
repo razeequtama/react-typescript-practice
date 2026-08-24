@@ -1,4 +1,10 @@
+import MovieSearch from "./components/MovieSearch"
+
 export default function App()
 {
-  return <h1>Hello</h1>
+  return(
+    <div>
+      <MovieSearch/>
+    </div>
+  )
 }

@@ -1,0 +1,35 @@
+// API retrieval instruction:
+//     Send all data requests to:
+//     https://www.omdbapi.com/?apikey=[yourkey]&
+//
+//     Examples:
+//
+//     Search for movies by title:
+//     https://www.omdbapi.com/?apikey=[yourkey]&s=Batman
+//
+//     Get a specific movie by title:
+//     https://www.omdbapi.com/?apikey=[yourkey]&t=Bruce+Almighty
+//
+//     Get a specific movie by IMDb ID:
+//     https://www.omdbapi.com/?apikey=[yourkey]&i=tt0315327
+//
+//     Search by title and year:
+//     https://www.omdbapi.com/?apikey=[yourkey]&s=Batman&y=2008
+//
+//     Get full plot information:
+//     https://www.omdbapi.com/?apikey=[yourkey]&t=Inception&plot=full
+//
+//     Search for TV series:
+//     https://www.omdbapi.com/?apikey=[yourkey]&s=Breaking+Bad&type=series
+//
+//     Get search results from a specific page:
+//     https://www.omdbapi.com/?apikey=[yourkey]&s=Batman&page=2
+//
+//
+// Poster API requests:
+//     https://img.omdbapi.com/?apikey=[yourkey]&
+//
+//     Example:
+//     https://img.omdbapi.com/?apikey=[yourkey]&i=tt0315327
+//
+//     Note: The Poster API requires a patron API key.

@@ -52,3 +52,12 @@ Learn:
 - nullable values
 - optional properties
 - type narrowing
+
+# Versions
+There are no currently defined versions.
+
+# What I Learned
+- Using .env in a normal Express App is different than in a React + Vite app. 
+
+# Result
+There are no currently defined result.
