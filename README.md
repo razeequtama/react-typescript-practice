@@ -15,7 +15,7 @@ The goal is to learn by building increasingly realistic applications, starting w
 * [X] 04 — Quiz Engine
 * [X] 05 — Expense Analyzer
 * [X] 06 — Habit Tracker v2
-* [ ] 07 — Movie Search
+* [X] 07 — Movie Search
 * [ ] 08 — Shopping Cart
 * [ ] 09 — Notes App
 * [ ] 10 — Kanban Board
