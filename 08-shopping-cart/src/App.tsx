@@ -1,8 +1,13 @@
 import React from 'react'
+import Cart from './components/Cart'
+import List from './components/List'
 
 export default function App() {
   return (
-    <h1>App</h1>
+    <div>
+      <Cart/>
+      <List/>
+    </div>
   )
 }
 
